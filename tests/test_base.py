@@ -61,4 +61,4 @@ class MainTest(TestCase):
         }
 
         response = self.client.post(url_for('auth.login'), data=fake_form)
-        self.assertEqual(response, url_for('index'))
+        self.assertEqual(response.location, url_for('index'))
